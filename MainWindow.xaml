@@ -1,0 +1,33 @@
+﻿<Window x:Class="tabelka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tabelka"
+        mc:Ignorable="d"
+        Title="Tabela" Height="450" Width="800" Background="Gray">
+    <Grid>
+        <DataGrid x:Name="Testowa" Margin="10,100,10,10">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <!-- header text and bindings-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="1*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="3*"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="3*" />
+                <DataGridTextColumn Header="Wiek" Binding="{Binding Wiek}" Width="2*" />
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button x:Name="Szukaj" Content="Szukaj" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="80" Width="100" Click="Szukaj_Click"/>
+        <Border Margin="120,9,0,345" Height="80" Background="White">
+            <TextBox  x:Name="Zawodnik"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="60"/>
+        </Border>
+    </Grid>
+</Window>
